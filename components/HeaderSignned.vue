@@ -18,11 +18,31 @@
                     </li>
                 </ul>
             </div>
-            <NuxtLink to="/login" class="my-2 my-lg-0 "><button class="btn btn-success"><Icon name="material-symbols:person" style="color:white" /> Entrar</button></NuxtLink>
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <Icon name="material-symbols:account-circle" style="color: white;" size="1rem"/>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><p class="dropdown-item">Bienvenidx {{ user.username }}</p></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a href="#" @click.prevent="logout" class="dropdown-item"><Icon name="ic:outline-log-out" /> Cerrar sesión</a></li>
+                </ul>
+            </div>
+            
         </div>
     </nav>
 </div>
 </template>
+
+<script setup>
+
+const {user, clear} = useUserSession(); 
+
+const logout = () =>{
+    clear();
+    window.location.href = "/";
+}
+</script>
 
 <style>
 #navbar {

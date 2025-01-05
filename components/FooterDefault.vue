@@ -8,5 +8,13 @@
 </template>
 
 <style>
-
+#footer{
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    display: flex;
+}
+#f2{
+    width: 100vw;
+}
 </style>

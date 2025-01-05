@@ -6,7 +6,6 @@
     </div>
     
 </template>
-
 <style>
 #content{
     width: 80vw;
