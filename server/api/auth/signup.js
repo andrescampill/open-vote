@@ -25,13 +25,15 @@ export default defineEventHandler( async (event) =>{
         const db = await initDb();
         const hashedPassword = await bcrypt.hash(password, 12);
         const uuid = crypto.randomUUID();
+        const perm = 1;
 
         try{
             // Insert into DB
-            await db.run("INSERT INTO users (uuid, username, password) VALUES (?, ?, ?)", [
+            await db.run("INSERT INTO users (uuid, username, password, perms) VALUES (?, ?, ?, ?)", [
                 uuid,
                 username,
                 hashedPassword,
+                perm
             ]);
 
             const user = await db.get("SELECT * FROM users WHERE username = ?", [username]);

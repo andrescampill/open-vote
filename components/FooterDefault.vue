@@ -9,7 +9,7 @@
 
 <style>
 #footer{
-    position: absolute;
+    position: fixed;
     text-align: center;
     bottom: 0;
     display: flex;

@@ -2,7 +2,7 @@
     <div id="navbar">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Sistema de voto</a>
+            <a class="navbar-brand text-white" href="/">Sistema de voto</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -10,11 +10,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="#"><Icon name="material-symbols:how-to-vote" style="color: white" />
+                        <a class="nav-link text-white" aria-current="page" href="/login"><Icon name="material-symbols:how-to-vote" style="color: white" />
                             Votar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#"><Icon name="material-symbols-light:inbox-text" style="color: white;" /> Resultados</a>
+                        <a class="nav-link text-white" href="/login"><Icon name="material-symbols-light:inbox-text" style="color: white;" /> Resultados</a>
                     </li>
                 </ul>
             </div>

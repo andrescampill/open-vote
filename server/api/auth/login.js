@@ -39,7 +39,7 @@ export default defineEventHandler( async (event) => {
                 statusMessage: "Invalid username or password",
             });
         } else {
-            const userData = {username: user.username};
+            const userData = {username: user.username, perm: user.perms, uuid: user.uuid};
             await setUserSession(event, {
                 user: userData,
                 loggedInAt: new Date(),

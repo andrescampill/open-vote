@@ -34,8 +34,6 @@
 </template>
 
 <script>
-import { routerKey } from 'vue-router';
-
 export default {
     data() {
         return {
