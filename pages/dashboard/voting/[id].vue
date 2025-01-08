@@ -11,6 +11,7 @@
         <div v-else>
             <h2>Detalles de la votación</h2>
             <VoteDetails :voteId="idNum" />
+            <ResultCard :voteId="idNum" />
         </div>
     </div>
 
