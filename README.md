@@ -139,6 +139,7 @@ If you need more information regarding the deployment, please refer to the [depl
 
 - WebSocket integration
 - English Translation of the GUI
+- Bulk vote edit.
 
 ## Contributing
 
