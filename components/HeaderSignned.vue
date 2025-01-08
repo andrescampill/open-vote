@@ -57,5 +57,8 @@ var perm = user.value.perm;
     margin-top: 10px;
     margin-left: 10vw;
     margin-bottom: 10px;
+    position: sticky;
+    top: 10px;
+    z-index: 10;
 }
 </style>

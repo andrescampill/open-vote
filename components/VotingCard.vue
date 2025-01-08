@@ -81,8 +81,8 @@
                     </div>
 
                     <div class="model-footer d-flex justify-content-center" v-if="this.show.error">
-                        <div class="alert alert-danger m-3">
-                            Ha ocurrido un error, por favor pongase en contacto con algun mimebro de la Junta Directiva:
+                        <div class="alert m-3" :class="'alert-' + this.show.errorClass">
+                            
                             {{ show.msg }}.
                         </div>
                     </div>
@@ -107,6 +107,7 @@ export default {
                 loading: true,
                 error: false,
                 msg: '404',
+                errorClass: 'danger',
             },
             response: [{
                 title: '',
@@ -139,12 +140,17 @@ export default {
                     body,
                 });
                 this.show.loading = false;
-                await reloadNuxtApp();
-                
+                this.show.error = true;
+                this.show.msg= "Su voto se ha guardado correctamente"
+                this.show.errorClass="success";
+                setTimeout(async () =>{
+                    await reloadNuxtApp();
+                },5000)                
             } catch (error) {
                 this.show.loading = false;
                 this.show.error = true;
-                this.show.msg = error;
+                this.show.errorClass="danger";
+                this.show.msg = "Ha habido un error y su voto no se ha podido guardar: " + error;
                 await refreshNuxtData();
             }
 

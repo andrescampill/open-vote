@@ -8,7 +8,6 @@
             <div v-for="voteLoaded in votingData" v-else>
                 <VoteLinkCard :vote="voteLoaded" />
             </div>
-            
         </div>
     </div>
 
@@ -78,3 +77,15 @@ export default {
     }
 }
 </script>
+
+<style>
+#content{
+    padding-bottom: 20vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .card{
+        width: 80vw !important;
+    }
+}
+</style>

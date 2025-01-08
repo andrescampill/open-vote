@@ -32,7 +32,8 @@
                     <div class="card" style="width: 45vw;">
                         <div class="card-body">
                             <LastVotes />
-                            <a href="/dashboard/voting"><button class="btn btn-primary">Ver todas las votaciones</button></a>
+                            <a href="/dashboard/voting"><button class="btn btn-primary">Ver todas las
+                                    votaciones</button></a>
                         </div>
                     </div>
 
@@ -42,8 +43,16 @@
             <div>
                 <!--Información sobre usuarios-->
                 <div class="d-flex justify-content-between">
-                    <div>A</div>
-                    <div>B</div>
+                    <div>
+                        <SignUpForm class="signUpForm"/>
+                    </div>
+                    <div class="card mb-5" style="width: 45vw; height: 55vh;;">
+                        <div class="card-body">
+                            <LastUsers />
+                            <a href="/dashboard/users"><button class="btn btn-primary">Ver todos los
+                                    usuarios</button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,5 +116,9 @@ export default {
 
 #loading {
     height: 80vh;
+}
+.signUpForm{
+    height: 57vh;
+    margin-top: -2vh !important;
 }
 </style>

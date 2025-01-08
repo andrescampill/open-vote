@@ -24,6 +24,7 @@
         <button type="submit" class="btn btn-primary" v-else>
             <Icon name="material-symbols:add" style="color:white;" /> Crear votación
         </button>
+        <a href="" class="text-secondary"><p class="form-text text-secondary">Crear votación con opciones personalizadas</p></a>
     </form>
 </template>
 

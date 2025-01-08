@@ -13,7 +13,7 @@ export default defineEventHandler( async (event) =>{
             };
         }
 
-        const {username, password} = body;
+        const {username, password, perms} = body;
         
 
         if(!username || !password){
@@ -25,7 +25,6 @@ export default defineEventHandler( async (event) =>{
         const db = await initDb();
         const hashedPassword = await bcrypt.hash(password, 12);
         const uuid = crypto.randomUUID();
-        const perm = 1;
 
         try{
             // Insert into DB
@@ -33,18 +32,9 @@ export default defineEventHandler( async (event) =>{
                 uuid,
                 username,
                 hashedPassword,
-                perm
+                perms
             ]);
-
-            const user = await db.get("SELECT * FROM users WHERE username = ?", [username]);
-
-            const userData = { username: user.username};
-            await setUserSession(event, {
-                user: userData,
-                loggedInAt: new Date(),
-            });
-
-            return {success: true, user};
+            return {success: true};
         } catch (error) {
             console.error("Error while creating a new user, ", error);
             return createError({

@@ -10,9 +10,8 @@
         </div>
         <div v-else>
             <h2>Detalles de la votación</h2>
-            <p>{{ idNum }}</p>
+            <VoteDetails :voteId="idNum" />
         </div>
-
     </div>
 
 </template>
