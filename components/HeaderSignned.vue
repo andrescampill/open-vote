@@ -13,9 +13,10 @@
                         <a class="nav-link text-white" aria-current="page" href="/vote"><Icon name="material-symbols:how-to-vote" style="color: white" />
                             Votar</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- For future upadtes -->
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-white" href="#"><Icon name="material-symbols-light:inbox-text" style="color: white;" /> Resultados</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item" v-if="perm">
                         <a href="/dashboard" class="nav-link text-white"><Icon name="pajamas:admin" style="color:white;" /> Panel</a>
                     </li>
@@ -27,6 +28,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><p class="dropdown-item">Bienvenidx {{ user.username }}</p></li>
+                    <li><a href="/credits" class="dropdown-item">Créditos</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a href="#" @click.prevent="logout" class="dropdown-item"><Icon name="ic:outline-log-out" /> Cerrar sesión</a></li>
                 </ul>

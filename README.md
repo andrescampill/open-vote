@@ -4,67 +4,69 @@
 ![GitHub License](https://img.shields.io/github/license/andrescampill/vote-app)
 
 
-Open-vote is a free and open source app made with the needs of most non-profits organisations in mind. With its basic UI, and non-complex use, most people are able to manage most operations with the app. 
+Open-vote es una aplicación gratuíta y de código abierto hecha con las necesidades de las asociaciones y entidades sin animo de lucro en mente. Con una interfáz básica y un uso no complejo, la mayoría de las personas son capaces de operar la aplicación.
 
 > [!NOTE]
-> This project has been started and its manteined by an engineering student, so expect slow development and updates. For more information refer to the Contributing section.
+> Este proyecto ha sido comenzado y es mantenido por un estudiante de ingeniería, por lo que puede esperar un desarrollo lento y poca frecuencia de actualizaciónes. Para más información, lea la sección de Contribución
 
 > [!IMPORTANT]
-> Existe una versión en español de este README, acceda a través del siguiente [enlace](README_ES.md).
+> Existe una versión en inglés de este README, acceda a través del siguiente [enlace](README_EN.md).
 >
-> There's a spanish version of this README, access to it through the following [link](README_ES.md)
+> There's an english version of this README, access to it through the following [link](README_EN.md)
 
 > [!WARNING]
-> Some parts of the GUI are in Spanish, translations is beeing added in the future, refer to the [roadmap](#roadmap) for more information.
+> Algunas partes de la interfáz estan en español. Diversas traducciones serán añadidas en el futuro, lea [roadmap](#roadmap) para más información.
 
-## Table of contents
+## Índice
 
 
 - [Open-vote](#open-vote)
-  - [Table of contents](#table-of-contents)
-  - [About](#about)
-    - [Technology used](#technology-used)
-  - [Downloading and installing](#downloading-and-installing)
+  - [Índice](#índice)
+  - [Sobre el proyecto](#sobre-el-proyecto)
+    - [Tecnología usada](#tecnología-usada)
+  - [Descarga e instalación](#descarga-e-instalación)
     - [Installation](#installation)
-    - [Run Locally](#run-locally)
-    - [Deployment](#deployment)
+    - [Ejecución local](#ejecución-local)
+    - [Despliegue](#despliegue)
   - [Roadmap](#roadmap)
-  - [Contributing](#contributing)
-  - [More documentation](#more-documentation)
+  - [Contribuciones](#contribuciones)
+  - [Más información](#más-información)
 
-## About
+## Sobre el proyecto
 
-The open-vote project is an open source web app made to help non-profit organisations (NGO) to manage online voting saftly and easily, beeing able to create, activate, deactivate, edit, remove and see voting processes. 
+El proyecto open-vote es una aplicación web de código abierto, hecha para ayudar a organizaciones sin ánimo de lucro a manejar votaciones online de forma segura y facil y permitiendo la creación, activación desactivación, edición, eliminación and observación de las votaciones.
 
-During the COVID-19 pandemic, thousands of people were require to transform all of their main workflows into the digital spectrum. Non profits wern't less, actually having a really big impact on their work because lots of them have no to little budged, for that reason, open-vote was created, helping NGOs transform their whole meetings into the digital world.
+Durante la pandemia de la COVID-19, miles de personas tuvieron que transformar todas sus costumbres dentro del espectro digital. Las organizaciones sin ánimo de lucro no fueron menos, teniendo un mayor impacto ya que muchas de ellas trabajan con un presupuesto bajo o nulo, por esta razón, open-vote fue creado, ayudando a ONGs a transformar todas sus reuniones dentro del mundo digital.
 
-To get started with the project, continue to [Downloading and installing](#downloading-and-installing).
+Para comenzar a usar el proyecto, continua a [descarga e instalación](#downloading-and-installing).
 
 
 
-### Technology used
+### Tecnología usada
 
-This web app has been made with the [Nuxt](https://nuxtjs.org) framework, giving the ability to handel front and back end from the same repository and code base.
+Esta aplicación web ha sido usada con el framework [Nuxt](https://nuxtjs.org), dando la habilidad de manejar el front y back-end desde el mismo repositorio y base de código.
 
-Most code has been written in JavaScript, HTML and CSS (inside the `.vue` files).
+La mayor parte del código ha sido escrita en JavaScript, HTML y CSS (dentro de archivos `.vue`)
 
-## Downloading and installing
 
-At the moment, you need to build first before moving to the actual hosting/deploy part.
+## Descarga e instalación
 
-1. Firstly, download the code from the GitHub repository using the web GUI or the following command:
+Por el momento, necesitas hacer el build del proyecto antes de poder proceder a desplegarlo en servidores.
+
+1. Primero, descargue el código desde el repositorio de Github usando la interfáz web o el siguiente comando:
+
     ```bash
       git clone https://github.com/andrescampill/vote-app.git
     ```
 
-2. Then open the folder with all the files:
+2. Proceda a abrir la carpeta con el código
    ```bash
    cd vote-app
    ```
 
 ### Installation
 
-3. When you have all the files ready, proceed with the installation of all the dependencies that the project needs:
+3. Cuando tenga todos los archivos preparados, proceda a la instalación de todas la dependencias que el proyecto necesita:
 
 ```bash
 # npm
@@ -80,9 +82,9 @@ yarn install
 bun install
 ```
     
-### Run Locally
+### Ejecución local
 
-You can start a development server on `http://localhost:3000` using: 
+Puede comenzar un servidor de desarrollo local en `http://localhost:3000` usando: 
 ```bash
 # npm
 npm run dev
@@ -97,7 +99,7 @@ yarn dev
 bun run dev
 ```
 
-You can also run a local production build of the project with, but remember to build the app first, checkout [deployment](#deployment) for more infomation.
+Tambien puede ejecutar una build de producción en un ambiente local, pero recuerde que primero necesita obtener la build, consulte [deployment](#deployment) para más información.
 
 ```bash
 # npm
@@ -114,9 +116,9 @@ bun run preview
 ```
 
 
-### Deployment
+### Despliegue
 
-To make a production build for actual hosting, you can run:
+Pada obtener la build de producción para el despligue y alojamiento, use
 
 ```bash
 # npm
@@ -132,26 +134,26 @@ yarn build
 bun run build
 ```
 
-If you need more information regarding the deployment, please refer to the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) of Nuxt
+Si necesita más información sobre el despliegue, consulte la [documentación de despliegue (en inglés)](https://nuxt.com/docs/getting-started/deployment) de Nuxt.
 
 
 ## Roadmap
 
-- WebSocket integration
-- English Translation of the GUI
-- Bulk vote edit.
+- Integración con WebSockets
+- Traducción de la interfáz a Inglés
 
-## Contributing
+## Contribuciones
 
-Contributions are always welcome in the project! 
+¡Cualquier contribución al proyecto es bienvenida!
 
-You are free to make any issues or pull request to the GitHub repository, all of them will be checked out.
+Siempre es libre de crear `issues` o `pull request` al repositorio de Github, todas ellas serán revisadas.
 
-Please follow normal community guidelines for contributing.
+Este proyecto se encuentra mantenido principalmente por estudiantes, por favor, espere poca frecuencia en modificaciones y actualizaciones
 
-This project is mainly mantained by students so expect low frequent updates.
+Por favor, sigua normás básicas de convivencia a la hora de contribuir.
 
-## More documentation
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-Check out the [Vue documentation](https://vuejs.org/guide/introduction.html) for more information about the front-end framework. 
+## Más información
+Consulte la [documentación de Nuxt](https://nuxt.com/docs/getting-started/introduction) para aprender más sobre la tecnología utilizada.
+
+Consulte la [documentación de Vue](https://vuejs.org/guide/introduction.html) para más información sobre la tecnología usada en el front-end. 

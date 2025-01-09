@@ -11,8 +11,6 @@
                         <span v-else class="badge rounded-pill text-bg-danger ">Inactiva</span>
                     </div>
                 </div>
-
-
             </h5>
             <p class="card-text">{{ vote.description }}</p>
         </div>
