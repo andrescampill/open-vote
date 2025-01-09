@@ -1,7 +1,7 @@
 <template>
     <div id="footer">
         <div id="f2">
-            <p>(c) {{ new Date().getFullYear() }} - Andrés Campillo</p>
+            <p>Made with 💚 by <a href="https://github.com/andrescampill">Andrés</a></p>
         </div>
     </div>
 

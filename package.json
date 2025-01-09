@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "open-vote",
   "private": true,
   "type": "module",
   "scripts": {

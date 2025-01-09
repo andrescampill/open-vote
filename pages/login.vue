@@ -4,6 +4,16 @@
             <div class="card mt-3" style="width: 30rem;">
                 <div class="card-body">
                     <h2 class="card-title">Inice sesion</h2>
+                    <div class="alert alert-primary" v-if="loggedIn">
+                        <div class="d-flex">
+                            <div style="width: 1vw;" class="me-2">
+                                <Icon name="tabler:exclamation-circle" class="align-middle" /> 
+                            </div>
+                            <div class="align-middle">
+                                Ya has iniciado sesión
+                            </div>
+                        </div>
+                    </div>
 
                     <form @submit.prevent="login()">
                         <div class="mb-3">
@@ -66,7 +76,7 @@ export default {
                     method: "POST",
                     body,
                 });
-                window.location. href = "/"
+                reloadNuxtApp();
                 this.show.error = false;
                 this.show.loading = false;
             } catch (error){
@@ -75,6 +85,9 @@ export default {
             }
 
         }
+    },
+    setup(){
+        const { loggedIn } = useUserSession();
     }
 }
 </script>

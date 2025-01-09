@@ -4,7 +4,6 @@
     <HeaderDefault v-if="!loggedIn"/>
     <HeaderSignned v-if="loggedIn" />
     <NuxtPage />
-    <FooterDefault />
   </div>
 </template>
 
