@@ -4,4 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['bootstrap/dist/css/bootstrap.css'],
   modules: ['@nuxt/icon', 'nuxt-auth-utils'],
+  runtimeConfig: {
+    version: '1.0.0-beta'
+  }
 })
