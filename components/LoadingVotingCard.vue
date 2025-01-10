@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex justify-content-center">
-        <div class="card mt-2" style="width: 40rem;">
+        <div class="card mt-2" style="width: 30vw;">
             <div class="card-body">
                 <h3 class="card-title placeholder-glow">
                     <span class="placeholder col-6"></span>

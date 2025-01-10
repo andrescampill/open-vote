@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
             };
         }
 
-        var { title, desc, active, type, opt } = body;
+        var { title, desc, active, opt } = body;
         const optTemp = [
             {
                 text: "A FAVOR",
@@ -26,23 +26,21 @@ export default defineEventHandler(async (event) => {
                 value: 0,
             }
         ];
-
         const optTempString = JSON.stringify(optTemp);
-
-        type = 0;
-        if(!title || !desc){
+        if(!title || !desc || !opt){
             return{
                 error: "Body needs to have all the data"
             };
         }
 
         const db = await initDb();
+        opt = JSON.stringify(opt);
         try {
             await db.run("INSERT INTO vote (title, description, active, options, voted) VALUES (?, ?, ?, ?, ?)", [
                 title,
                 desc,
                 active,
-                optTempString,
+                opt,
                 JSON.stringify([{}]),
             ]);
             console.log("Votación creada correctamente");

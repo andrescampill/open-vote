@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
             };
         }
 
-        var { optNum, id, uuidRes } = body;
+        var { opts, id, uuidRes } = body;
 
         const db = await initDb();
 
@@ -21,16 +21,11 @@ export default defineEventHandler(async (event) => {
             );
             console.log(response);
             var options = response[0].options;
-            var max = 1;
+            var max = options[0].value;
             options = JSON.parse(options);
-            if (options[0].text == 'per') {
-                // Is personalized
-                max = options[0].value;
-                console.log("VOTACIÓN PERSONALZIADA");
-                options.splice(0, 1);
-            };
-            options[optNum].value++;
-            
+            opts.forEach((optNum) =>{
+                options[optNum+1].value++;
+            });
             options = JSON.stringify(options);
             try {
                 var uuidSent = response[0].voted;

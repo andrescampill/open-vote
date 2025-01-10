@@ -22,7 +22,7 @@
             </div>
             <div>
                 <!--Información sobre votaciones-->
-                <div class="d-flex justify-content-between mt-3">
+                <div class="d-flex justify-content-between mt-3" id="votingInfo">
                     <div class="card" style="width: 30vw;">
                         <div class="card-body">
                             <h4 class="card-title">Crea una votación:</h4>
@@ -42,7 +42,7 @@
             <hr>
             <div>
                 <!--Información sobre usuarios-->
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between" id="userInfo">
                     <div>
                         <SignUpForm class="signUpForm"/>
                     </div>
@@ -120,5 +120,18 @@ export default {
 .signUpForm{
     height: 57vh;
     margin-top: -2vh !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .card{
+        width: 80vw !important;
+    }
+
+    #votingInfo{
+        display: block !important;
+    }
+    #userInfo{
+        display: block !important; 
+    }
 }
 </style>

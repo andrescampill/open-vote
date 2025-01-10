@@ -16,6 +16,7 @@
             <div class="card" style="width: 40vw;">
                 <div class="card-body">
                     <h5 class="card-title">Resultados de la votación:</h5>
+                    <button class="btn" @click.prevent="reloadPage()"><Icon name="material-symbols:refresh" class="align-middle" /></button>
                     <table class="table table-striped ">
                         <thead>
                             <tr>
@@ -75,6 +76,10 @@ export default {
                 this.voteData = response[0];
                 this.show.loading = false;
                 this.voteData.options = JSON.parse(this.voteData.options)
+                if (this.voteData.options[0].text == 'per') {
+                // Is personalized
+                this.voteData.options.splice(0,1);
+            }
                 this.getTotal();
             } catch (error) {
                 this.show.alert = {
@@ -94,7 +99,24 @@ export default {
 
             this.total = totalTemp;
             
-        }
+        },
+        async reloadPage(){
+            this.show.loading = true;
+            try{
+                await refreshNuxtData();
+                this.show.loading = false;
+            } catch (error){
+                this.show.loading = false;
+                this.show.alert = {
+                    visible: true,
+                    msg: 'Ha habido un error recargando los datos',
+                    class: 'danger',
+                };
+
+                }
+            }
+            
+        
     },
     mounted() {
         this.getData();

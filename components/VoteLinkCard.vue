@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex justify-content-center m-3">
-        <div class="card" style="width: 30rem;">
+        <div class="card" style="width: 40vw;">
             <div class="card-body">
                 <h5 class="card-title">{{ vote.title }}</h5>
                 <p class="card-text">{{ vote.description }}</p>

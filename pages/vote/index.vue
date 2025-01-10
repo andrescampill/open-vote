@@ -8,6 +8,9 @@
             <div v-for="voteLoaded in votingData" v-else>
                 <VoteLinkCard :vote="voteLoaded" />
             </div>
+            <div class="d-flex justify-content-center" v-if="ids == undefined">
+                <p>Actualmente no hay ninguna votación activa.</p>
+            </div>
         </div>
     </div>
 
