@@ -1,4 +1,4 @@
-import { initDb } from "../../db/Database"
+import { initDb } from "../../db/database"
 
 export default defineEventHandler(async (event) => {
 
