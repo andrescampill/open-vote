@@ -20,7 +20,7 @@
         </a>
         </div>
         <div class="mt-5">
-            <p>Este proyecto se encuentra bajo </p>
+            <p>Este proyecto se encuentra bajo la licencia de uso GNU GENERAL PUBLIC LICENSE.</p>
         </div>
         
     </div>
@@ -30,7 +30,7 @@
 export default{
     data(){
         return{
-            version: '1.0.0-beta'
+            version: '0.1.0-beta'
         }
     },
 }

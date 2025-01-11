@@ -47,7 +47,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <button class="btn btn-success" type="submit" @click.prevent="save()"><Icon name="material-symbols:save" style="color:white;" /> Guardar</button>
-                        <button class="btn btn-danger ms-2" @click.prevent="deleteVote()"><Icon name="material-symbols:delete" /> Borrar</button>
+                        <button class="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#confirmDelete"><Icon name="material-symbols:delete" /> Borrar</button>
                     </li>
                 </ul>
 
@@ -56,6 +56,30 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5">¿Seguro que quieres eliminar la votación?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Esta acción es <b>irreversible</b>. Todos los datos sobre la votación serán eliminado, incluyendo los <b>resultados</b>. Confirme que desea eliminar la siguiente votación: <br>
+                        <b>Id:</b> <span class="text-secondary">#{{ voteData.id }}</span><br>
+                        <b>Título:</b> {{ voteData.title }}<br>
+                        <b>Descripción: </b> {{ voteData.description }} <br>
+                        <span v-if="voteData.active" class="badge rounded-pill text-bg-success">Activa</span>
+                        <span v-else class="badge rounded-pill text-bg-danger ">Inactiva</span>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-danger" @click.prevent="deleteVote()"><Icon name="material-symbols:delete" /> Confirmar borrado </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
