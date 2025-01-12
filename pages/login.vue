@@ -4,7 +4,7 @@
             <div class="card mt-3" style="width: 30rem;">
                 <div class="card-body">
                     <h2 class="card-title">Inice sesion</h2>
-                    <div class="alert alert-primary" v-if="loggedIn">
+                    <div class="alert alert-primary" v-if="logged">
                         <div class="d-flex">
                             <div style="width: 1vw;" class="me-2">
                                 <Icon name="tabler:exclamation-circle" class="align-middle" /> 
@@ -55,7 +55,8 @@ export default {
             userData:{
                 user: '',
                 pass: '',
-            }
+            },
+            logged: false,
             
 
         }
@@ -86,8 +87,9 @@ export default {
 
         }
     },
-    setup(){
+    mounted(){
         const { loggedIn } = useUserSession();
+        this.logged = loggedIn;
     }
 }
 </script>

@@ -44,6 +44,7 @@
 const {user, clear, isLogged} = useUserSession(); 
 
 const logout = () =>{
+    
     clear();
     window.location.href = "/";
 }
