@@ -12,22 +12,8 @@ export default defineEventHandler(async (event) => {
         }
 
         var { title, desc, active, opt } = body;
-        const optTemp = [
-            {
-                text: "A FAVOR",
-                value: 0,
-            },
-            {
-                text: "EN CONTRA",
-                value: 0,
-            },
-            {
-                text: "ABSTENCIÓN",
-                value: 0,
-            }
-        ];
-        const optTempString = JSON.stringify(optTemp);
-        if(!title || !desc || !opt){
+
+        if(!title || !opt){
             return{
                 error: "Body needs to have all the data"
             };

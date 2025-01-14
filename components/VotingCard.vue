@@ -10,7 +10,7 @@
                 </div>
             </div>
 
-            <div class="card mt-2" style="width: 40rem;">
+            <div class="card mt-2" style="width: 40vw;">
                 <div class="card-body">
                     <h3 class="card-title">{{ this.response[0].title }}</h3>
                     <p class="card-text">{{ this.response[0].description }}</p>

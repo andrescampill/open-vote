@@ -58,20 +58,36 @@ export default {
             } else {
                 this.voteData.activeClean = 0;
             }
+        const optTemp = [
+            {
+                text: "A FAVOR",
+                value: 0,
+            },
+            {
+                text: "EN CONTRA",
+                value: 0,
+            },
+            {
+                text: "ABSTENCIÓN",
+                value: 0,
+            }
+        ];
+
             const body = {
                 title: this.voteData.title,
                 desc: this.voteData.desc,
                 active: this.voteData.activeClean,
+                opt: optTemp,
             }
 
             console.log(body);
 
             try {
-                await $fetch('/api/vote/create', {
+                const response = await $fetch('/api/vote/create', {
                     method: "POST",
                     body,
                 });
-
+                console.log(response);
                 this.show.loading = false;
                 this.show.error = {
                     visible: true,
