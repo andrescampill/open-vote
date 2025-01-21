@@ -7,3 +7,10 @@
 
 <script>
 </script>
+
+<style>
+#content {
+    width: 80vw;
+    margin-left: 10vw;
+}
+</style>

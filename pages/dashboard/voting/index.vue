@@ -50,4 +50,9 @@ h2{
     position: sticky;
     top: 10vh;
 }
+
+#content {
+    width: 80vw;
+    margin-left: 10vw;
+}
 </style>
