@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
     try{
         const db = await initDb();
         try {
-            var response = await db.all("SELECT * FROM vote WHERE active = 1");
+            var [response] = await db.execute("SELECT * FROM vote WHERE active = 1");
             var activesId = [];
             var cnt = 0;
             console.log(response[0].id);

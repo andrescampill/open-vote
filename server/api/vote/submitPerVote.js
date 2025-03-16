@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
         const db = await initDb();
 
         try {
-            const response = await db.all("SELECT * FROM vote WHERE id = ?", [
+            const [response] = await db.execute("SELECT * FROM vote WHERE id = ?", [
                 id
             ]
             );
@@ -45,12 +45,12 @@ export default defineEventHandler(async (event) => {
             
             uuidSent = JSON.stringify(uuidSent);
             console.log(uuidSent);
-            await db.run("UPDATE vote SET (options) = (?) WHERE id = ?", [
+            await db.execute("UPDATE vote SET options = (?) WHERE id = ?", [
                 options,
                 id
             ]);
 
-            await db.run("UPDATE vote SET (voted) = (?) WHERE id = ?", [
+            await db.execute("UPDATE vote SET voted = (?) WHERE id = ?", [
                 uuidSent,
                 id
             ]);

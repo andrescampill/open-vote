@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
     try{
         const db = await initDb();
         try {
-            const response = await db.all("SELECT * FROM vote ORDER BY id DESC");
+            const [response] = await db.execute("SELECT * FROM vote ORDER BY id DESC");
             return response;
 
         } catch(error){

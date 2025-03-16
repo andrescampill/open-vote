@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
         try {
             var users = [];
             var cnt = 0;
-            const response = await db.all("SELECT * FROM users ORDER BY id DESC LIMIT 5");
+            const [response] = await db.execute("SELECT * FROM users ORDER BY id DESC LIMIT 5");
             response.forEach((user) => {
                 users[cnt] = {
                     id: user.id,

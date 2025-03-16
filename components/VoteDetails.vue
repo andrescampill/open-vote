@@ -113,7 +113,7 @@ export default {
                 this.show.error = false;
 
                 const response = await $fetch(`/api/vote/getInfo/${this.voteId}`);
-                console.log(response[0]);
+                console.log(response);
                 this.voteData = response[0];
                 this.show.loading = false;
                 if (this.voteData.active == 1) {

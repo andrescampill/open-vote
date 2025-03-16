@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
             if (!pass) {
                 //Just upadte perms
                 console.log("Only changing permissions");
-                await db.run("UPDATE users SET (perms) = (?) WHERE id = ?", [
+                await db.execute("UPDATE users SET (perms) = (?) WHERE id = ?", [
                     perms,
                     id
                 ]);
@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
             } else {
                 console.log("changing password");
                 const hashedPassword = await bcrypt.hash(pass, 12);
-                await db.run("UPDATE users SET (perms, password) = (?, ?) WHERE id = ?", [
+                await db.execute("UPDATE users SET (perms, password) = (?, ?) WHERE id = ?", [
                     perms,
                     hashedPassword,
                     id

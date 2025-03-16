@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
         const db = await initDb();
         opt = JSON.stringify(opt);
         try {
-            await db.run("INSERT INTO vote (title, description, active, options, voted) VALUES (?, ?, ?, ?, ?)", [
+            await db.execute("INSERT INTO vote (title, description, active, options, voted) VALUES (?, ?, ?, ?, ?)", [
                 title,
                 desc,
                 active,

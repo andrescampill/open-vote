@@ -7,16 +7,19 @@ export default defineEventHandler(async (event) => {
     try{
         const db = await initDb();
         try {
-            var response = await db.all("SELECT * FROM users WHERE id = ?", [
+            var [res] = await db.execute("SELECT * FROM users WHERE id = ?", [
                 id
             ]
             );
-            response = {
-                id: response[0].id,
-                uuid: response[0].uuid,
-                username: response[0].username,
-                perms: response[0].perms
+            console.warn("AQUI");
+            console.log(res)
+            var response = {
+                id: res[0].id,
+                uuid: res[0].uuid,
+                username: res[0].username,
+                perms: res[0].perms
             }
+            console.log(response)
             return response;
 
         } catch(error){

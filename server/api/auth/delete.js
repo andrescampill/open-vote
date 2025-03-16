@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
         var { id } = body;
         try {
 
-            await db.all("DELETE FROM users WHERE id = ?", [
+            await db.execute("DELETE FROM users WHERE id = ?", [
                 id
             ]
             );

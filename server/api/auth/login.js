@@ -28,9 +28,10 @@ export default defineEventHandler( async (event) => {
         }
 
         const db = await initDb();
-        const user = await db.get("SELECT * FROM users where username = ?", [
+        const [rows] = await db.execute("SELECT * FROM users where username = ?", [
             username,
         ]);
+        const user = rows[0]
 
         if(!user || !(await bcrypt.compare(password, user.password))){
             console.log(`Invalid username or password for user: ${username} `);

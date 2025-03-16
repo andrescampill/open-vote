@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
         const db = await initDb();
         try {
             console.log(body);
-            await db.run("UPDATE vote SET (title, description, active) = (?, ?, ?) WHERE id = ?", [
+            await db.execute("UPDATE vote SET title = ?, description = ?, active = ? WHERE id = ?", [
                 title,
                 description,
                 active,

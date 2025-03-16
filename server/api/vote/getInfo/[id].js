@@ -7,11 +7,11 @@ export default defineEventHandler(async (event) => {
     try{
         const db = await initDb();
         try {
-            var response = await db.all("SELECT * FROM vote WHERE id = ?", [
+            var response = await db.execute("SELECT * FROM vote WHERE id = ?", [
                 id
             ]
             );
-            return response;
+            return response[0];
 
         } catch(error){
             console.log("Ha habido un error al fetch todos los datos");

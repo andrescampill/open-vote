@@ -296,6 +296,7 @@ export default {
             }
 
             this.response = await $fetch(`/api/vote/getInfo/${this.idnum}`);
+            console.log(this.response[0].options);
             this.options = JSON.parse(this.response[0].options);
 
             this.voted = JSON.parse(this.response[0].voted);

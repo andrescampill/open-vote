@@ -28,7 +28,7 @@ export default defineEventHandler( async (event) =>{
 
         try{
             // Insert into DB
-            await db.run("INSERT INTO users (uuid, username, password, perms) VALUES (?, ?, ?, ?)", [
+            await db.execute("INSERT INTO users (uuid, username, password, perms) VALUES (?, ?, ?, ?)", [
                 uuid,
                 username,
                 hashedPassword,
