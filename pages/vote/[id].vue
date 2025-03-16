@@ -1,5 +1,5 @@
 <template>
-    <div id="content">
+    <div id="content" >
         <div class="d-flex justify-content-center m-5" id="prueba" v-if="show.loading">
             <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -24,7 +24,7 @@ export default {
     },
     beforeMount() {
         const route = useRoute()
-
+        this.show.loading = false;
         this.id = route.params.id;
     }
 }
@@ -35,7 +35,8 @@ export default {
     width: 80vw;
     margin-left: 10vw;
 }
-#prueba{
+
+#prueba {
     height: 100vh;
 }
 </style>
