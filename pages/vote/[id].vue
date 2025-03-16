@@ -1,6 +1,6 @@
 <template>
     <div id="content" >
-        <div class="d-flex justify-content-center m-5" id="prueba" v-if="show.loading">
+        <div class="d-flex justify-content-center m-5" id="prueba" v-if="!show.loading">
             <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
@@ -17,14 +17,14 @@ export default {
     data() {
         return {
             show: {
-                loading: false,
+                loading: true,
             },
             id: 0,
         }
     },
     beforeMount() {
         const route = useRoute()
-        this.show.loading = false;
+        this.show.loading = true;
         this.id = route.params.id;
     }
 }
