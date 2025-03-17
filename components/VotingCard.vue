@@ -74,7 +74,7 @@
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Valida tu voto</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            v-if="!this.show.loading"></button>
+                            v-if="!show.loading"></button>
                     </div>
                     <div class="modal-body">
                         <p>Por favor, verifique que su voto es correcto, ya que no podrá cambiarlo una vez sea enviado
@@ -83,8 +83,8 @@
                         Usted ha elegido la opción <b>{{ vote.opt }}</b> <br>
                         <span class="text-body-secondary">#{{ idnum }}</span>
                     </div>
-                    <div class="modal-footer" v-if="!this.show.loading">
-                        <div v-if="!this.show.error">
+                    <div class="modal-footer" v-if="!show.loading">
+                        <div v-if="!show.error">
                             <button type="button" class="btn btn-secondary me-3"
                                 data-bs-dismiss="modal">Cancelar</button>
                             <button type="button" class="btn btn-primary" @click.prevent="enviar()">
@@ -93,14 +93,14 @@
                         </div>
 
                     </div>
-                    <div class="model-footer d-flex justify-content-center mb-3" v-if="this.show.loading">
+                    <div class="model-footer d-flex justify-content-center mb-3" v-if="show.loading">
                         <div class="spinner-border text-primary" role="status">
                             <span class="visually-hidden">Cargando...</span>
                         </div>
                     </div>
 
-                    <div class="model-footer d-flex justify-content-center" v-if="this.show.error">
-                        <div class="alert m-3" :class="'alert-' + this.show.errorClass">
+                    <div class="model-footer d-flex justify-content-center" v-if="show.error">
+                        <div class="alert m-3" :class="'alert-' + show.errorClass">
 
                             {{ show.msg }}.
                         </div>
@@ -116,7 +116,7 @@
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Valida tu voto</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            v-if="!this.show.loading"></button>
+                            v-if="!show.loading"></button>
                     </div>
                     <div class="modal-body">
                         <p>Por favor, verifique que su voto es correcto, ya que no podrá cambiarlo una vez sea enviado
@@ -132,8 +132,8 @@
                         <br>
                         <span class="text-body-secondary">#{{ idnum }}</span>
                     </div>
-                    <div class="modal-footer" v-if="!this.show.loading">
-                        <div v-if="!this.show.error">
+                    <div class="modal-footer" v-if="!show.loading">
+                        <div v-if="!show.error">
                             <button type="button" class="btn btn-secondary me-3"
                                 data-bs-dismiss="modal">Cancelar</button>
                             <button type="button" class="btn btn-primary" @click.prevent="sendPer()">
@@ -142,14 +142,14 @@
                         </div>
 
                     </div>
-                    <div class="model-footer d-flex justify-content-center mb-3" v-if="this.show.loading">
+                    <div class="model-footer d-flex justify-content-center mb-3" v-if="show.loading">
                         <div class="spinner-border text-primary" role="status">
                             <span class="visually-hidden">Cargando...</span>
                         </div>
                     </div>
 
-                    <div class="model-footer d-flex justify-content-center" v-if="this.show.error">
-                        <div class="alert m-3" :class="'alert-' + this.show.errorClass">
+                    <div class="model-footer d-flex justify-content-center" v-if="show.error">
+                        <div class="alert m-3" :class="'alert-' + show.errorClass">
 
                             {{ show.msg }}.
                         </div>
