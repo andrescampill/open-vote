@@ -7,7 +7,7 @@
                     <span class="badge text-bg-info" id="badge">Modo avanzado</span>
                 </div>
                 <div class="card-body">
-                    <div v-if="this.show.loading" class="d-flex justify-content-center">
+                    <div v-if="show.loading" class="d-flex justify-content-center">
                         <div class="spinner-border text-primary" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
